@@ -9,4 +9,4 @@ Opens Yandex Panoramas in a new browser tab
 
 <https://yandex.ru/maps/?l=stv>
 
-<div style="text-align:center"><img src="scrn.png" alt="yandex-panoramas-qgis-plugin"></div>
+<div style="text-align:center"><img src="pict.png" alt="yandex-panoramas-qgis-plugin"></div>
