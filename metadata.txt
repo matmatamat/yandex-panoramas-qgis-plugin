@@ -1,0 +1,18 @@
+[general]
+name=yandex-panoramas-qgis-plugin
+description=Opens Yandex Panoramas in a new browser tab
+about=Opens Yandex Panoramas in a new browser tab - https://yandex.ru/maps/?l=stv
+      Открывает Яндекс Панорамы в новой вкладке браузера
+version=1.0
+qgisMinimumVersion=3.0
+author=matmatamat
+email=matmatamail@gmail.com
+
+experimental=False
+
+icon=icon.svg
+tags=web, Yandex
+homepage=https://github.com/matmatamat/yandex-panoramas-qgis-plugin
+tracker=https://github.com/matmatamat/yandex-panoramas-qgis-plugin/issues
+repository=https://github.com/matmatamat/yandex-panoramas-qgis-plugin
+
