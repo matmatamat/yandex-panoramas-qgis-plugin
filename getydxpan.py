@@ -36,6 +36,11 @@ class GetYdxPan(QgsMapToolEmitPoint):
         self.start_marker.reset(QgsWkbTypes.PointGeometry)
         self.end_marker.reset(QgsWkbTypes.PointGeometry)
 
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            from qgis.gui import QgsMapToolPan
+            self.canvas.setMapTool(QgsMapToolPan(self.canvas))
+
     def canvasPressEvent(self, event):
         if event.button() == Qt.LeftButton:
             if self.start_point is None:
