@@ -1,8 +1,8 @@
+# -*- coding: utf-8 -*-
 from qgis.utils import iface
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand
 from qgis.core import QgsPointXY, QgsWkbTypes, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject
 from qgis.PyQt.QtCore import Qt
-# -*- coding: utf-8 -*-
 from qgis.PyQt.QtGui import QColor
 from math import atan2, degrees, log
 import webbrowser
