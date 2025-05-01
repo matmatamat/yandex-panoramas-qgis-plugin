@@ -1,5 +1,5 @@
 [general]
-name=yandex-panoramas-qgis-plugin
+name=Yandex Panoramas
 description=Opens Yandex Panoramas in a new browser tab
 about=Opens Yandex Panoramas in a new browser tab - https://yandex.ru/maps/?l=stv
       Открывает Яндекс Панорамы в новой вкладке браузера
