@@ -42,7 +42,7 @@ class GetYdxPan(QgsMapToolEmitPoint):
             self.canvas.setMapTool(QgsMapToolPan(self.canvas))
 
     def canvasPressEvent(self, event):
-        if event.button() == Qt.LeftButton:
+        if event.button() == Qt.MouseButton.LeftButton:
             if self.start_point is None:
                 self.start_point = self.toMapCoordinates(event.pos())
                 self.start_marker.addPoint(self.start_point)
@@ -79,7 +79,7 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 self.start_marker.show()
                 self.rubber_band.addPoint(self.start_point)
                              
-        elif event.button() == Qt.RightButton:
+        elif event.button() == Qt.MouseButton.RightButton:
             self.reset()
 
     def canvasMoveEvent(self, event):
