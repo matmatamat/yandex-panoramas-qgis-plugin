@@ -69,8 +69,8 @@ class GetYdxPan(QgsMapToolEmitPoint):
                     
                 zoom_level = round(log(591657550.5 / current_scale, 2))
                     
-            link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
-            QDesktopServices.openUrl(QUrl(link))
+                link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
+                QDesktopServices.openUrl(QUrl(link))
             
             elif self.start_point:
                 self.reset()
