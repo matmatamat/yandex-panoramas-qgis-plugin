@@ -4,7 +4,7 @@ description=Opens Yandex Panoramas in a new browser tab
 about=Opens Yandex Panoramas in a new browser tab - https://yandex.ru/maps/?l=stv
       Открывает Яндекс Панорамы в новой вкладке браузера
 version=1.0
-qgisMinimumVersion=3.0
+qgisMinimumVersion=4.0
 author=matmatamat
 email=matmatamail@gmail.com
 
