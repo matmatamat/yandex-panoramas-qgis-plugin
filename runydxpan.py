@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from PyQt5.QtWidgets import QAction
+from qgis.PyQt.QtGui import QAction
 from qgis.PyQt.QtGui import QIcon, QCursor, QPixmap
 from qgis.core import QgsProject, QgsRasterLayer
 from .getydxpan import GetYdxPan
