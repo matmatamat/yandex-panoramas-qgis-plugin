@@ -5,8 +5,6 @@ from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor
 from math import atan2, degrees, log
 import webbrowser
-import sys
-from qgis.PyQt.QtCore import QProcess
 
 class GetYdxPan(QgsMapToolEmitPoint):
     def __init__(self, canvas):
@@ -72,13 +70,8 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 
                 link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
                 
-                # Вариант 1: Использовать webbrowser
                 webbrowser.open(link)
                 
-                # Вариант 2: Использовать QProcess (закомментирован)
-                # self.open_browser(link)
-                
-                # Сброс после открытия ссылки
                 self.reset()
             
             elif self.start_point:
@@ -90,15 +83,6 @@ class GetYdxPan(QgsMapToolEmitPoint):
                              
         elif event.button() == Qt.MouseButton.RightButton:
             self.reset()
-
-    def open_browser(self, url):
-        """Альтернативный метод открытия браузера через QProcess"""
-        if sys.platform == 'win32':
-            QProcess.startDetached('cmd', ['/c', 'start', url])
-        elif sys.platform == 'darwin':
-            QProcess.startDetached('open', [url])
-        else:
-            QProcess.startDetached('xdg-open', [url])
 
     def canvasMoveEvent(self, event):
         if self.start_point is not None and self.end_point is None:
