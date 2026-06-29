@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from qgis.utils import iface
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand
 from qgis.core import QgsPointXY, QgsWkbTypes, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject
@@ -12,7 +13,7 @@ class GetYdxPan(QgsMapToolEmitPoint):
         self.iface = iface
         self.canvas = canvas
         QgsMapToolEmitPoint.__init__(self, self.canvas)
-        
+
         self.rubber_band = QgsRubberBand(self.canvas, QgsWkbTypes.LineGeometry)
         self.rubber_band.setColor(QColor(255, 0, 0, 100))
         self.rubber_band.setWidth(3)
@@ -50,7 +51,7 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 self.rubber_band.addPoint(self.start_point)
             elif self.end_point is None:
                 self.end_point = self.toMapCoordinates(event.pos())
-                self. end_marker.addPoint(self.end_point)
+                self.end_marker.addPoint(self.end_point)
                 self.end_marker.show()
                 self.rubber_band.addPoint(self.end_point)
                                 
@@ -68,11 +69,11 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 azimuth = (degrees(atan2(dx, dy))) % 360
                     
                 zoom_level = round(log(591657550.5 / current_scale, 2))
-                    
+                
                 link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
                 
                 webbrowser.open(link)
-                
+
                 self.reset()
             
             elif self.start_point:
