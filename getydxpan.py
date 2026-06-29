@@ -2,8 +2,8 @@
 from qgis.utils import iface
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand
 from qgis.core import QgsPointXY, QgsWkbTypes, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject
-from qgis.PyQt.QtCore import Qt, QUrl
-from qgis.PyQt.QtGui import QColor, QDesktopServices
+from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtGui import QColor
 from math import atan2, degrees, log
 import webbrowser
 
@@ -70,7 +70,10 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 zoom_level = round(log(591657550.5 / current_scale, 2))
                     
                 link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
-                QDesktopServices.openUrl(QUrl(link))
+                
+                webbrowser.open(link)
+                
+                self.reset()
             
             elif self.start_point:
                 self.reset()
