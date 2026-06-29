@@ -75,10 +75,10 @@ class GetYdxPan(QgsMapToolEmitPoint):
                 link = f'https://yandex.ru/maps/?indoorLevel=1&ll={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bdirection%5D={azimuth}%2C0.000000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D={point_transformed.x()}%2C{point_transformed.y()}&panorama%5Bspan%5D=127.617127%2C60.000000&z={zoom_level}'
                 
                 # Вариант 1: Использовать webbrowser
-                # webbrowser.open(link)
+                webbrowser.open(link)
                 
                 # Вариант 2: Использовать QProcess (закомментирован)
-                self.open_browser(link)
+                #self.open_browser(link)
                 
                 # Сброс после открытия ссылки
                 self.reset()
